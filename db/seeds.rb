@@ -7,3 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 joe = User.create(name: "joe", username: "joe", password_digest: "123456")
+
+recording1 = Recording.create(user_id: 1, path: "google.com")
