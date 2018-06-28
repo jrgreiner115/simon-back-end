@@ -24,6 +24,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+# for API!
 gem 'active_model_serializers', '~> 0.10.0'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
@@ -40,6 +41,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+# for .env file
+gem 'dotenv-rails'
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
