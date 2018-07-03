@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :recordings, only: [:create, :show, :update, :delete]
-      resources :users, only: [:create, :show, :update]
+      resources :recordings, only: [:index, :create, :show, :update, :delete]
+      resources :users, only: [:index, :create, :show, :update]
       resources :sessions, only: [:create]
     end
   end
