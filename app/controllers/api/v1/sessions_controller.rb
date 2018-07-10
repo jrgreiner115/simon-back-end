@@ -9,8 +9,7 @@ class Api::V1::SessionsController < ApplicationController
       render json: {
         token: token,
         username: @user.username,
-        id: @user.id,
-        recordings: @user.recordings
+        id: @user.id
       }
     else
       render json: {

@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2018_07_03_135503) do
   create_table "recordings", force: :cascade do |t|
     t.integer "user_id"
     t.string "path"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

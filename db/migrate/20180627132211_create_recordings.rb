@@ -3,7 +3,7 @@ class CreateRecordings < ActiveRecord::Migration[5.2]
     create_table :recordings do |t|
       t.integer :user_id
       t.string :path
-
+      t.string :name
       t.timestamps
     end
   end

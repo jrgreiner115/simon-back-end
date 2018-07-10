@@ -5,21 +5,34 @@ class Api::V1::RecordingsController < ApplicationController
 
     render json: @recordings
   end
+
+  def show
+    @recording = Recording.find(params[:id])
+    render json: @recording
+  end
   def create
-    byebug
-    @recording = Recording.new()
-    @recording.user_id = params[:user_id]
-    @recording.audio.attach(params[:audio])
-    byebug
+    @recording = Recording.new(recording_params)
     if @recording.save
-      @recording.path = @recording.audio.service_url
-      render json: @recording, include: [{attachment: {include: { blob: {methods: :service_url}}} }]
+      render json: @recording
+    else render json: {
+    errors: @user.errors.full_messages
+  }, status: :unprocessable_entity
     end
   end
 
-  # private
-  #
-  # def recording_params
-  #   params.require(:recording).permit(:user_id, :audio)
-  # end
+  def update
+    @recording= Recording.find(params[:id])
+      @recording.update(:name => params[:name])
+        render json: @recording
+  end
+
+  def destroy
+    Recording.destroy(params[:id])
+  end
+
+  private
+
+  def recording_params
+    params.require(:recording).permit(:user_id, :path, :name)
+  end
 end
