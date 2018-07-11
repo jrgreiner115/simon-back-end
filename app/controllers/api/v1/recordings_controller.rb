@@ -23,11 +23,15 @@ class Api::V1::RecordingsController < ApplicationController
   def update
     @recording= Recording.find(params[:id])
       @recording.update(:name => params[:name])
-        render json: @recording
+      @recordings = Recording.where(user_id: @recording.user_id)
+        render json: @recordings
   end
 
   def destroy
     Recording.destroy(params[:id])
+
+    @recordings = Recording.where(user_id: @recording.user_id)
+      render json: @recordings
   end
 
   private
