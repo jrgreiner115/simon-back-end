@@ -1,25 +1,6 @@
-# README
+# Simon API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the API for Simon, a browser-based audio workstation. You can find that repo, with full documentation for the application, [here](https://github.com/jrgreiner115/simon-front-end).
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# simon-back-end
+## Live Demo
+[Heroku Demo](https://simon-daw.herokuapp.com/)
